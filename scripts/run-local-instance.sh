@@ -80,7 +80,7 @@ if [ -n "$localMode" ] && [ -z "$forkMode" ]; then
 
     if [ -z "$tmux" ]; then
         # launch both instances in same terminal.
-        anvil &
+        anvil --host 0.0.0.0 &
 
         sleep 2
         pushd .
@@ -125,9 +125,10 @@ if [ -n $forkMode ] && [ -z "$localMode" ]; then
 
     if [ -z "$tmux" ]; then
         # launch both instances in same terminal.
-        anvil --fork-url $rpcUrl \
+        anvil --host 0.0.0.0 \
+              --fork-url $rpcUrl \
               --fork-block-number $blockNum \
-              --timestamp  $forkTimestamp &
+              --timestamp $forkTimestamp &
 
         sleep 2
 

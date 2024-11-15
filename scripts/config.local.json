@@ -1,6 +1,6 @@
 {
     "network-name": "local",
-    "rpc-url": "http://127.0.0.1:8545",
+    "rpc-url": "http://0.0.0.0:8545",
     "min-entity-stake": 1,
     "min-executor-balance": "1000000000000000000",
     "min-entity-unstake-delay": 1,
