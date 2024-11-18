@@ -52,4 +52,4 @@ EXPOSE 4337
 
 # start 
 ENV INFURA_API_KEY=""
-CMD ["sh", "-c", "./scripts/run-local-instance.sh -f -r https://sepolia.infura.io/v3/${INFURA_API_KEY} -b 7065442"]
+CMD ["sh", "-c", "LATEST_BLOCK=$(cast block-number --rpc-url https://sepolia.infura.io/v3/${INFURA_API_KEY}) && echo \"Latest block fetched: $LATEST_BLOCK\" && ./scripts/run-local-instance.sh -f -r https://sepolia.infura.io/v3/${INFURA_API_KEY} -b $LATEST_BLOCK"]
